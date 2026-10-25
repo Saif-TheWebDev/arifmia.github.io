@@ -137,6 +137,34 @@
   }
   handleLead("leadForm"); handleLead("auditForm");
 
+  /* Light / Dark mode */
+  var root = document.documentElement;
+  function paintThemeBtns(){
+    var dark = root.getAttribute("data-theme") === "dark";
+    $$(".theme-toggle").forEach(function(b){
+      b.setAttribute("aria-pressed", dark ? "true" : "false");
+      b.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
+    });
+    $$(".js-theme-btn").forEach(function(b){
+      b.innerHTML = dark ? "☀️ Light mode" : "🌙 Dark mode";
+    });
+  }
+  function setTheme(t){
+    root.setAttribute("data-theme", t);
+    try{ localStorage.setItem("arif-theme", t); }catch(e){}
+    paintThemeBtns();
+  }
+  try{
+    var saved = localStorage.getItem("arif-theme");
+    if(saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+  }catch(e){}
+  paintThemeBtns();
+  $$(".theme-toggle, .js-theme-btn").forEach(function(b){
+    b.addEventListener("click", function(){
+      setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+    });
+  });
+
   /* Footer newsletter (demo) */
   var nl = $("#newsForm");
   if(nl) nl.addEventListener("submit", function(e){

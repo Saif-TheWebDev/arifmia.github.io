@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<script>try{if(localStorage.getItem("arif-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 <style>
 .svc-detail{display:grid;grid-template-columns:64px 1fr;gap:22px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:34px 32px;margin-bottom:18px;scroll-margin-top:110px;transition:.3s}
 .svc-detail:hover{box-shadow:var(--shadow-md);border-color:rgba(10,162,154,.35)}
@@ -41,6 +42,7 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-cta">
+        <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
         <a href="contact.html" class="btn btn-primary btn-sm">Free SEO Audit
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <button class="hamburger" data-open-drawer aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -55,6 +57,7 @@
     <button class="drawer-close" data-close-drawer aria-label="Close menu">✕</button>
     <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="results.html">Results</a><a href="contact.html">Contact</a>
     <div class="drawer-cta">
+      <button class="btn btn-ghost js-theme-btn">🌙 Dark mode</button>
       <a href="contact.html" class="btn btn-primary">Get Free SEO Audit</a>
       <a href="https://wa.me/8801834177835" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Me</a>
     </div>
