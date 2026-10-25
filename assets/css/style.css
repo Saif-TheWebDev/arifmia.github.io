@@ -27,20 +27,13 @@
   --max:1120px;
   --measure:68ch;
 }
-/* OS theme default applies only when the user has no saved choice */
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme]){ --os-dark:1; }
-}
-:root[data-theme="dark"]{ --want-dark:1; }
+/* Main theme is white (#fff). Dark applies only via the manual toggle. */
 :root{
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme]){ color-scheme:dark; }
-}
 :root[data-theme="dark"]{ color-scheme:dark; }
 
-/* Dark values shared by saved choice + OS default (no-JS friendly) */
+/* Dark values for the manual toggle only */
 :root[data-theme="dark"]{
   --paper:#081426;
   --surface:#0c1d3d;
@@ -58,26 +51,6 @@
   --danger:#ff8a80;
   --shadow-1:0 1px 2px rgba(0,0,0,.4),0 12px 28px -12px rgba(0,0,0,.6);
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme]){
-    --paper:#081426;
-    --surface:#0c1d3d;
-    --wash:#0e2b28;
-    --ink:#edf3f1;
-    --body:#c4d2e8;
-    --muted:#9fb0cc;
-    --hairline:rgba(255,255,255,.12);
-    --hairline-strong:rgba(255,255,255,.22);
-    --action:#2bb7a9;
-    --action-hover:#5eead4;
-    --action-ink:#052e2b;
-    --accent:#5eead4;
-    --focus:#5eead4;
-    --danger:#ff8a80;
-    --shadow-1:0 1px 2px rgba(0,0,0,.4),0 12px 28px -12px rgba(0,0,0,.6);
-  }
-}
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -138,10 +111,6 @@ h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.18;le
 .theme-toggle .icon-sun{display:none}
 :root[data-theme="dark"] .theme-toggle .icon-sun{display:block}
 :root[data-theme="dark"] .theme-toggle .icon-moon{display:none}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme]) .theme-toggle .icon-sun{display:block}
-  :root:not([data-theme]) .theme-toggle .icon-moon{display:none}
-}
 .menu-button{display:none}
 
 /* Mobile nav panel */

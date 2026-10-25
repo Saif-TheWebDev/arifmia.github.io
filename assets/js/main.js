@@ -32,14 +32,14 @@
     });
   }
 
-  /* Theme: saved choice wins, otherwise OS preference (handled in CSS).
-     Pre-paint script in <head> sets data-theme before first render. */
+  /* Theme: white (#fff) is the main theme. Saved "dark" restores dark;
+     anything else (or nothing) means light. Pre-paint script in <head>
+     sets data-theme before first render. */
   var root = doc.documentElement;
   function paintTheme(){
     var saved = null;
     try{ saved = localStorage.getItem("arif-theme"); }catch(e){}
-    var dark = saved ? saved === "dark"
-      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var dark = saved === "dark" || root.getAttribute("data-theme") === "dark";
     doc.querySelectorAll(".theme-toggle").forEach(function(b){
       b.setAttribute("aria-pressed", dark ? "true" : "false");
       var label = b.querySelector(".sr");
@@ -49,10 +49,7 @@
   paintTheme();
   doc.querySelectorAll(".theme-toggle").forEach(function(b){
     b.addEventListener("click", function(){
-      var saved = null;
-      try{ saved = localStorage.getItem("arif-theme"); }catch(e){}
-      var osDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      var currentlyDark = saved ? saved === "dark" : osDark;
+      var currentlyDark = root.getAttribute("data-theme") === "dark";
       var next = currentlyDark ? "light" : "dark";
       root.setAttribute("data-theme", next);
       try{ localStorage.setItem("arif-theme", next); }catch(e){}

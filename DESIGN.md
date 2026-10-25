@@ -16,7 +16,8 @@
   and customers.
 - **Constraints:** static hosting (GitHub Pages, no backend); all content must
   come from arifmia.com or be explicitly marked as demo; must work without
-  JavaScript for reading; must respect reduced-motion and OS theme preferences.
+  JavaScript for reading; must respect reduced-motion. Main theme is white
+  for all visitors; dark is opt-in via the header toggle only.
 
 ## 2. Content inventory & evidence rules
 
@@ -77,10 +78,12 @@ floating buttons (246) → header + in-flow contact actions; emoji icons (184)
 --radius-tag    8px            tags ≠ buttons (shape by role)
 --shadow-1      0 1px 2px rgba(6,28,67,.08), 0 8px 24px -12px rgba(6,28,67,.25)
                 single elevation tier: sticky header + open menu only
-Dark theme: canvas #081426, surface #0c1d3d, ink #edf3f1, body #c4d2e8,
+Main theme is white: --paper #ffffff for everyone by default.
+Dark theme (canvas #081426, surface #0c1d3d, ink #edf3f1, body #c4d2e8,
 muted #9fb0cc, hairline rgba(255,255,255,.12), action #2bb7a9 with
-#052e2b text (≈7:1). Follows prefers-color-scheme unless the user saved a
-choice; choice persists in localStorage; applied pre-paint (no flash).
+#052e2b text ≈5.9:1) applies only via the manual header toggle; the choice
+persists in localStorage and is applied pre-paint (no flash). The OS
+dark-mode preference is intentionally not followed (client decision).
 ```
 
 **Semantic roles:** teal = action/selection only; no second chromatic accent;
@@ -141,7 +144,7 @@ status is always text + icon, never hue alone. (fix500: 151, 155)
 
 `/` home · `/about.html` · `/services.html` · `/results.html` ·
 `/contact.html` · `404.html`. States: menu open/closed · details open ·
-form initial/submitted · light/dark (+ OS default) · 320px → desktop ·
+form initial/submitted · light default + dark toggle · 320px → desktop ·
 no-JS · keyboard-only.
 
 ## 10. Review record (honest)
