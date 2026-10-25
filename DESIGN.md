@@ -88,13 +88,19 @@ status is always text + icon, never hue alone. (fix500: 151, 155)
 
 ## 5. Typography
 
-- **Display:** Newsreader (serif, optical sizing), 500–600, headlines only.
-  Rationale: human, editorial, distinct from generic sans-only AI output.
-- **Body/UI:** Inter 400–600. Rationale: coverage + legibility; tabular
-  numerals for all data (`font-variant-numeric: tabular-nums`).
-- Base 17px / 1.6; prose capped at 68ch; section eyebrows are numbered
-  ("01 — Services") in small caps sans. No all-caps paragraphs; no gradient
-  text; no display tracking on body.
+- **Display (headings, numerals, brand wordmark):** Poppins 600–700 via
+  Google Fonts (`display=swap`; latin + latin-ext subsets cover all
+  heading punctuation), fallback `"Orlean", system-ui, sans-serif`.
+  Rationale (client review): geometric, confident headings that pair with
+  the neutral SF-style body.
+- **Body/UI (everything else):** Orlean — self-hosted single semibold cut
+  at `assets/fonts/orlean.ttf`, `@font-face` with `font-display: swap`,
+  preloaded in `<head>`. Fallbacks: `"SF Pro Text", system-ui,
+  -apple-system, "Segoe UI", Roboto, sans-serif`.
+- Tabular numerals (`font-variant-numeric: tabular-nums`) for all data.
+  Base 17px / 1.6; prose capped at 68ch; section eyebrows numbered
+  ("01 — Services"). No all-caps paragraphs; no gradient text; no display
+  tracking on body.
 
 ## 6. Composition & components
 
