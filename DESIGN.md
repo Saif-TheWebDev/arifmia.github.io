@@ -128,7 +128,7 @@ status is always text + icon, never hue alone. (fix500: 151, 155)
 | Asset | Source | License/permission |
 |---|---|---|
 | Portrait + screenshots + logo (hotlinked) | arifmia.com media library (client's own site) | Client-owned; demo for the same owner |
-| Newsreader, Inter | Google Fonts (CDN) | OFL |
+| `assets/fonts/orlean.ttf` | Supplied by the site commissioner (file upload) | ⚠️ UNVERIFIED — the file's internal name table identifies it as "SF Pro Display Semibold" (Apple proprietary, not licensed for web embedding). Owner must confirm rights or replace before production. |
 | Icons | hand-drawn inline SVG in this repo | Original, MIT with repo |
 
 ## 9. Route inventory (fix500: 496)
@@ -147,6 +147,8 @@ instrumentation available in this environment):
 - [x] Contrast pairs spot-checked against WCAG ratios (AA targets).
 - [x] Markup reviewed: one H1 per page, landmarks, skip link, aria-current,
       labelled controls, table headers, details/summary FAQs.
+- [x] Orlean TTF serves correctly; every non-ASCII character used on-site
+      verified present in its cmap; no external font requests remain.
 - [ ] Rendered visual review at 320/768/1280px — needs human check.
 - [ ] Keyboard walkthrough + screen-reader pass — needs human check.
 - [ ] Field performance (LCP/INP/CLS) — needs real-device measurement.
