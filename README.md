@@ -17,8 +17,8 @@ asset provenance, and review record.
 ## Stack
 
 Static HTML + CSS + vanilla JS. No build step, no dependencies, readable
-without JavaScript. Light/dark themes follow the OS unless the visitor
-saves a choice.
+without JavaScript. Main theme is white (#fff); dark mode is available
+via the header toggle and persists per visitor.
 
 ## Preview locally
 
